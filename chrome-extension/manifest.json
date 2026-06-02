@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "WebChat AI — Q&A Any Website",
+  "version": "1.0.0",
+  "description": "Chat with any webpage using Google Gemini AI. Click the icon, load the page, and ask anything!",
+  "permissions": [
+    "sidePanel",
+    "activeTab",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Open WebChat AI",
+    "default_icon": {
+      "128": "icons/icon128.png"
+    }
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "128": "icons/icon128.png"
+  }
+}
