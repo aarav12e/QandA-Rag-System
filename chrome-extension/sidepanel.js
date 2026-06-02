@@ -6,36 +6,36 @@
 
 // ── CONFIG ──────────────────────────────────────────────────────
 // ⚠️  Replace this with your actual Render URL after deploying!
-const BACKEND_URL = 'https://YOUR-APP-NAME.onrender.com';
+const BACKEND_URL = 'https://chrome-extension-1-webai.onrender.com';
 
 // ── STATE ────────────────────────────────────────────────────────
-let sessionId   = null;
-let isBusy      = false;
-let loadedUrls  = [];
+let sessionId = null;
+let isBusy = false;
+let loadedUrls = [];
 
 // ── DOM REFS ─────────────────────────────────────────────────────
 const $ = id => document.getElementById(id);
 
-const stepLoad        = $('step-load');
-const stepChat        = $('step-chat');
-const urlInput        = $('url-input');
-const loadBtn         = $('load-btn');
-const loadBtnText     = $('load-btn-text');
-const loadStatus      = $('load-status');
-const errorBox        = $('error-box');
-const errorMsg        = $('error-message');
-const statusBadge     = $('status-badge');
-const resetBtn        = $('reset-btn');
-const messagesDiv     = $('messages');
-const chatInput       = $('chat-input');
-const sendBtn         = $('send-btn');
-const loadedUrlDisplay= $('loaded-url-display');
+const stepLoad = $('step-load');
+const stepChat = $('step-chat');
+const urlInput = $('url-input');
+const loadBtn = $('load-btn');
+const loadBtnText = $('load-btn-text');
+const loadStatus = $('load-status');
+const errorBox = $('error-box');
+const errorMsg = $('error-message');
+const statusBadge = $('status-badge');
+const resetBtn = $('reset-btn');
+const messagesDiv = $('messages');
+const chatInput = $('chat-input');
+const sendBtn = $('send-btn');
+const loadedUrlDisplay = $('loaded-url-display');
 
 const ps = {
-  scraping:  $('ps-scraping'),
-  chunking:  $('ps-chunking'),
+  scraping: $('ps-scraping'),
+  chunking: $('ps-chunking'),
   embedding: $('ps-embedding'),
-  ready:     $('ps-ready'),
+  ready: $('ps-ready'),
 };
 
 // ── INIT ──────────────────────────────────────────────────────────
@@ -73,8 +73,8 @@ function clearError() {
 }
 
 // ── PROGRESS ANIMATION ────────────────────────────────────────────
-const STEPS   = ['scraping', 'chunking', 'embedding', 'ready'];
-const DELAYS  = [0, 3500, 7500, 12000]; // ms — rough pacing
+const STEPS = ['scraping', 'chunking', 'embedding', 'ready'];
+const DELAYS = [0, 3500, 7500, 12000]; // ms — rough pacing
 
 function startProgress() {
   STEPS.forEach(s => ps[s].classList.remove('active', 'done'));
