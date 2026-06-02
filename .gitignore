@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+env/
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Editor directories/files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
+
+# Logs
+*.log
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+*.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
